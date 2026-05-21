@@ -13,6 +13,10 @@
 ถ้าค่าพลังชีวิตของทั้ง 2 เหลือ 0 พร้อมกัน ให้ประกาศว่า DRAW!
 
 #console 
+
+Enemy HP: 100
+Your HP: 100
+-----------------
 Please select [1] Fight, [2] Heal: 1
 Enemy HP: 70
 Your HP: 60
