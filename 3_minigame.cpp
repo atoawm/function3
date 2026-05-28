@@ -51,28 +51,34 @@ Your HP: 20
 -----------------
 YOU WIN!
 */
+#include <iostream>
+using namespace std;
 
+void fight(int &hp,int &ehp){
+    hp -= 40;
+    ehp -=30;
+}
+void heal(int &helt){
+    helt +=20;
+}
 
 int main()
 {
     int ehp = 100;
     int hp = 100;
+    int a;
 
-    while ( )
-    {
-        
-       
+    while (hp > 0 and ehp > 0)
+    {       
         cout << "Please select [1] Fight, [2] Heal: ";
-        
+        cin >> a;
         if (a == 1)
-        {
-           
+        {fight(hp,ehp);
+       
         }
         else if (a == 2)
-        {
-           
+        {heal(hp);
         }
-     
         else
         {
             cout << "Please select again\n";
@@ -84,20 +90,24 @@ int main()
         if(ehp < 0){
             ehp = 0;
         }
+        if(hp>100){
+            hp=100;
+        }
         cout << "Enemy HP: " << ehp << "\n";
         cout << "Your HP: " << hp << "\n";
-        cout << "-----------------" << "\n";
+        cout << "-----------------" << "\n"; 
     }
-    if(hp == 0){
-            
-        cout << "ENEMY WIN!";
-        }
-    if(ehp == 0){
+    if((ehp == 0) and (hp == 0)){
+        cout << "DRAW!";}
+
+    else if(ehp == 0){
         
         cout << "YOU WIN!";
     }
-    if((ehp == 0) and (hp == 0)){
-        cout << "DRAW!";
+    else if(hp == 0){
+            
+        cout << "ENEMY WIN!";
+        
     }
     
     return 0;

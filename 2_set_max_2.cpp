@@ -9,6 +9,39 @@
 set max my_arr1: {{0},{1}} 
 set max my_arr2: {{0, 0, 1}, {1, 0, 0}} 
 */
+#include <iostream>
+using namespace std;
 
-int my_arr1[][1] = {{1},{3}}
-int my_arr2[][3] = {{2,3,6},{6,2,3}}
+void max(int a[][3], int b, int c){
+    int max = a[0][0];
+    for(int i=0;i<b;i++){
+        for(int j=0;j<c;j++){
+            if (a[i][j]>max){
+            max=a[i][j];
+        } 
+    }
+}
+cout<<"{";
+    for(int i=0;i<b;i++){
+        cout <<"{";
+        for(int j=0;j<c;j++){
+            if (a[i][j]==max){
+                cout<<"1";
+            }else cout<<"0";
+            if (j!= c-1){
+                cout<<", ";
+            }if (j == 2){
+                cout<<"}";
+            }
+            }if (i!= b-1){
+            cout<<", ";}
+   
+    }cout<<"}";
+}
+
+int main(){
+    int my_arr2[][3] = {{2,3,6},{6,2,3}};
+    max(my_arr2,2,3);
+
+return 0;
+}
